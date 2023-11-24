@@ -10,7 +10,8 @@ const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
 
   const globalStats = data?.data?.stats;
-
+  const mehran = data?.data?.stats;
+  console.log("mehran" + mehran);
   if (isFetching) return "Loading...";
   return (
     <>

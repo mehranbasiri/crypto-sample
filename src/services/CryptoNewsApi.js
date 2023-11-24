@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-
 const cryptoNewsHeaders = {
   "X-BingApis-SDK": "true",
   "X-RapidAPI-Key": "f50ef871bemsh3ab9bdcf105aafbp1b8bf0jsnbe3c9defe24d",
@@ -15,7 +14,7 @@ export const cryptoNewsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl,
   }),
-  
+
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
       query: ({ newsCategory, count }) =>
@@ -23,9 +22,7 @@ export const cryptoNewsApi = createApi({
           `/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`
         ),
     }),
-      
-    }),
-   
+  }),
 });
 
 export const { useGetCryptoNewsQuery } = cryptoNewsApi;
